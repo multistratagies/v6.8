@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Multi-Strategy Manual Portfolio Studio</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar">
+        <div class="brand">
+          <div class="brand-mark">MS</div>
+          <div>
+            <h1>Strategy Studio</h1>
+            <p>Manual regime runner</p>
+          </div>
+        </div>
+
+        <nav class="menu">
+          <button class="menu-item active" data-strategy="bullish">
+            Bullish Guard Ensemble
+          </button>
+          <button class="menu-item" data-strategy="multimodel">
+            MultiModel
+          </button>
+          <button class="menu-item" data-strategy="goldminor">
+            GoldMinor
+          </button>
+        </nav>
+
+        <div class="mini-card">
+          <h3>Market backdrop</h3>
+          <div class="metric-grid">
+            <label>
+              SPY price
+              <input id="spyPrice" type="number" value="540" step="0.01" />
+            </label>
+            <label>
+              SPY 200 SMA
+              <input id="spySma200" type="number" value="510" step="0.01" />
+            </label>
+            <label>
+              TQQQ price
+              <input id="tqqqPrice" type="number" value="44" step="0.01" />
+            </label>
+            <label>
+              TQQQ 20 SMA
+              <input id="tqqqSma20" type="number" value="41" step="0.01" />
+            </label>
+            <label>
+              XLK RSI(10)
+              <input id="xlkRsi10" type="number" value="65" min="0" max="100" />
+            </label>
+            <label>
+              KMLM RSI(10)
+              <input id="kmlmRsi10" type="number" value="52" min="0" max="100" />
+            </label>
+            <label>
+              TQQQ RSI(10)
+              <input id="tqqqRsi10" type="number" value="58" min="0" max="100" />
+            </label>
+            <label>
+              GDXU RSI(10)
+              <input id="gdxuRsi10" type="number" value="55" min="0" max="100" />
+            </label>
+          </div>
+        </div>
+      </aside>
+
+      <main class="main-panel">
+        <header class="topbar">
+          <div>
+            <p class="eyebrow">Manual strategy monitor</p>
+            <h2 id="strategyTitle">Bullish Guard Ensemble</h2>
+          </div>
+          <button id="runBtn" class="primary-btn">Run strategy</button>
+        </header>
+
+        <section class="strategy-summary">
+          <div class="summary-box">
+            <span>Regime</span>
+            <strong id="regimeLabel">Risk-on</strong>
+          </div>
+          <div class="summary-box">
+            <span>Exposure</span>
+            <strong id="exposureLabel">Moderate</strong>
+          </div>
+          <div class="summary-box">
+            <span>Risk hedge</span>
+            <strong id="hedgeLabel">UVXY / TLT</strong>
+          </div>
+        </section>
+
+        <section class="cards-grid">
+          <article class="panel card">
+            <h3>Allocation</h3>
+            <div id="allocationTable" class="allocation-table"></div>
+          </article>
+
+          <article class="panel card">
+            <h3>Strategy notes</h3>
+            <div id="strategyNotes" class="notes"></div>
+          </article>
+        </section>
+
+        <section class="panel">
+          <div class="section-head">
+            <h3>Manual execution log</h3>
+            <button id="resetBtn" class="secondary-btn">Reset</button>
+          </div>
+          <div id="logContainer" class="log-container"></div>
+        </section>
+      </main>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
